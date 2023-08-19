@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".StatisticActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/image_filter"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            app:srcCompat="@drawable/baseline_search_24" />
+
+        <TextView
+            android:id="@+id/tv_timCongViec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tìm kiếm công việc của bạn"
+            android:textAlignment="center"
+            android:textColor="#2596be"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_tvmoTaTimCV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Nhập các thông tin để tra cứu"
+            android:textAlignment="center"
+            android:textColor="#66b6d2"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="177dp">
+
+        <EditText
+            android:id="@+id/edt_loaiTask_filter"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edittext_custom_background"
+            android:ems="10"
+            android:hint="Loai task"
+            android:inputType="text"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ngayTask_end" />
+
+        <TextView
+            android:id="@+id/tv_ngayTask_end"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edittext_custom_background"
+            android:hint="Chọn ngày"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ngayTask_start" />
+
+        <TextView
+            android:id="@+id/tv_gioTask_end"
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edittext_custom_background"
+            android:hint="Chọn giờ"
+            android:textAlignment="center"
+            android:padding="5dp"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@+id/tv_ngayTask_end"
+            app:layout_constraintTop_toBottomOf="@+id/tv_gioTask_start" />
+
+        <TextView
+            android:id="@+id/tv_ngayTask_start"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/edittext_custom_background"
+            android:hint="Chọn ngày"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_gioTask_start"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/edittext_custom_background"
+            android:hint="Chọn giờ"
+            android:textAlignment="center"
+            android:padding="5dp"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@+id/tv_ngayTask_start"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="28dp"
+            android:text="Từ: "
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="28dp"
+            android:text="Đến:"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+        <Button
+            android:id="@+id/btn_timKiem"
+            android:layout_width="126dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="232dp"
+            android:layout_marginTop="125dp"
+            android:text="Tìm kiếm"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:backgroundTint="#2596be"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_statistic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

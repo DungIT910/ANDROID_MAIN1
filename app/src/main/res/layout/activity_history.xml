@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".HistoryActivity">
+
+
+    <ImageView
+        android:id="@+id/image_history"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        app:srcCompat="@drawable/baseline_history_24" />
+
+    <TextView
+        android:id="@+id/tv_lichSuCongViec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lịch sử Công Việc"
+        android:textAlignment="center"
+        android:textColor="#2596be"
+        android:textSize="24dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_lichSuSuKien"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Dưới đây là các sự kiện bạn đã hoàn thành"
+        android:textAlignment="center"
+        android:textColor="#66b6d2"
+        android:textSize="18dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_history"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

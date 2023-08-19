@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".AddTaskActivity">
+
+
+    <ImageView
+        android:id="@+id/image_work"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        app:srcCompat="@drawable/baseline_work_outline_24" />
+
+    <TextView
+        android:id="@+id/tv_themCongViec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Công việc của bạn"
+        android:textAlignment="center"
+        android:textColor="#2596be"
+        android:textSize="24dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_dienSuKien"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Nhập vào các ô để chỉnh sửa nội dung"
+        android:textAlignment="center"
+        android:textColor="#66b6d2"
+        android:textSize="18dp" />
+
+    <ScrollView
+        android:layout_width="380dp"
+        android:layout_height="502dp"
+        android:layout_marginTop="10dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_tenTask2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Tiêu đề"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/edt_tenTask2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittext_custom_background"
+                android:elevation="4dp"
+                android:ems="10"
+                android:hint="Hay dien vao day"
+                android:inputType="text"
+                android:padding="5dp" />
+
+            <TextView
+                android:id="@+id/tv_moTa2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Mô tả"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/edt_moTaTask2"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittext_custom_background"
+                android:elevation="4dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Hay dien vao day"
+                android:inputType="textImeMultiLine"
+                android:padding="5dp" />
+
+            <TextView
+                android:id="@+id/tv_loaiTask2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Phân loại"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/edt_loaiTask2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittext_custom_background"
+                android:elevation="4dp"
+                android:ems="10"
+                android:hint="Hay dien vao day"
+                android:inputType="text"
+                android:padding="5dp" />
+
+            <TextView
+                android:id="@+id/tv_ngayTask2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Ngày tháng năm"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/edt_ngayTask2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittext_custom_background"
+                android:elevation="4dp"
+                android:ems="10"
+                android:focusable="false"
+                android:hint="Hay dien vao day"
+                android:inputType="text"
+
+                android:padding="5dp" />
+
+            <TextView
+                android:id="@+id/tv_gioTask2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Giờ"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/edt_gioTask2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittext_custom_background"
+                android:elevation="4dp"
+                android:ems="10"
+                android:focusable="false"
+                android:hint="Hay dien vao day"
+                android:inputType="text"
+                android:padding="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:padding="10dp"
+                android:gravity="center"
+                android:layout_marginTop="5dp">
+
+                <Button
+                    android:id="@+id/btn_quayLai"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="3.3"
+                    android:text="Quay lại"
+                    android:textStyle="bold"
+                    app:backgroundTint="#2596be" />
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.4"/>
+                <Button
+                    android:id="@+id/btn_xoaTask"
+                    android:layout_width="0dp"
+                    android:layout_weight="2.2"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Xóa"
+                    android:textStyle="bold"
+                    app:backgroundTint="#749BC2"/>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.4"/>
+                <Button
+                    android:id="@+id/btn_capNhatTask"
+                    android:layout_width="0dp"
+                    android:layout_weight="3.3"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Cập nhật"
+                    android:textStyle="bold"
+                    app:backgroundTint="#4682A9" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
