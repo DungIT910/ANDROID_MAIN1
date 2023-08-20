@@ -111,10 +111,11 @@ public class MainsActivity extends AppCompatActivity {
         setAlarm(intentAlarm);
 
     }
-
-    @Override
-    public void recreate() {
-        super.recreate();
+    public static void restartActivity(@NonNull Context context, String userTask) {
+        Intent intent = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName());
+        intent.putExtra("userTask", userTask);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        context.startActivity(intent);
     }
 
     // Ham show menu khi bam btnTuyChon
@@ -191,6 +192,9 @@ public class MainsActivity extends AppCompatActivity {
             }
         }
     }
+
+
+
     public static void stringToCalendar(@NonNull List<String> dateStringList, List<Calendar> calendarList, SimpleDateFormat dateFormat) {
         for (String dateString : dateStringList) {
             Date date = null;
@@ -207,6 +211,8 @@ public class MainsActivity extends AppCompatActivity {
     public void setAlarm(Intent intent) {
         for (int i = 0; i < calendarArrayList.size(); i++) {
             intentAlarm.putExtra("extra", "on");
+            intentAlarm.putExtra("userTask", taikhoan);
+            // request code chinh la matask de phan biet cac task voi nhau
             int requestCode = Integer.parseInt(maTasks.get(i));
             intentAlarm.putExtra("maTask", maTasks.get(i));
             Calendar calendar = calendarArrayList.get(i);

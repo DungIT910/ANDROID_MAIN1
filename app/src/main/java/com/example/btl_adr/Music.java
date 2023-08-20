@@ -30,9 +30,7 @@ public class Music extends Service {
         String nhankey = intent.getStringExtra("extra");
         Log.e("Music nhan Key", nhankey);
         Toast.makeText(this, nhankey, Toast.LENGTH_SHORT).show();
-//
-//        database db = new database(getBaseContext());
-//        db.updateCompleted(maTask);
+
         if (nhankey.equals("on")) {
             id = 1;
         }
