@@ -45,6 +45,7 @@ public class MainsActivity extends AppCompatActivity {
     PendingIntent pendingIntent;
     int cout = 0;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -207,6 +208,7 @@ public class MainsActivity extends AppCompatActivity {
         for (int i = 0; i < calendarArrayList.size(); i++) {
             intentAlarm.putExtra("extra", "on");
             int requestCode = Integer.parseInt(maTasks.get(i));
+            intentAlarm.putExtra("maTask", maTasks.get(i));
             Calendar calendar = calendarArrayList.get(i);
             pendingIntent = PendingIntent.getBroadcast(this, requestCode , intentAlarm, PendingIntent.FLAG_MUTABLE);
             alarmManager.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);

@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 public class Music extends Service {
     MediaPlayer mediaPlayer;
     int id;
+    String maTask;
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
@@ -24,10 +25,14 @@ public class Music extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
-        String nhankey = intent.getExtras().getString("extra");
+        maTask = intent.getStringExtra("maTask");
+        mediaPlayer = MediaPlayer.create(this, Settings.System.DEFAULT_ALARM_ALERT_URI);
+        String nhankey = intent.getStringExtra("extra");
         Log.e("Music nhan Key", nhankey);
         Toast.makeText(this, nhankey, Toast.LENGTH_SHORT).show();
-
+//
+//        database db = new database(getBaseContext());
+//        db.updateCompleted(maTask);
         if (nhankey.equals("on")) {
             id = 1;
         }
@@ -35,19 +40,21 @@ public class Music extends Service {
             id = 0;
         }
         if (id == 1) {
-            mediaPlayer = MediaPlayer.create(this, Settings.System.DEFAULT_ALARM_ALERT_URI);
             mediaPlayer.start();
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     mediaPlayer.stop();
                     stopSelf(); // Dừng dịch vụ
+
                 }
-            }, 3000);
+            }, 1000);
         }
         else {
-            mediaPlayer.stop();
-            mediaPlayer.reset();
+            if (mediaPlayer != null) {
+                mediaPlayer.stop();
+                mediaPlayer.reset();
+            }
         }
         return START_NOT_STICKY;
     }
